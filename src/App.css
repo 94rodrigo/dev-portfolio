@@ -3,7 +3,6 @@
   text-align: center;
 }
 
-/* Container usado pelo conteúdo centralizado da aplicação */
 .app-container {
   max-width: 1280px;
   margin: 0 auto;

@@ -1,11 +1,13 @@
-import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
-import { ArrowDownTrayIcon, Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react'
+import { ArrowDownTrayIcon, Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import { Link } from 'react-router-dom'
 
 const navigation = [
-    { name: 'About', href: '#', current: true },
-    { name: 'Projects', href: '#', current: false },
-    { name: 'Skills', href: '#', current: false },
-    { name: 'Contact', href: '#', current: false },
+    { name: 'Home', href: '/', current: true },
+    { name: 'About', href: '/about', current: false },
+    { name: 'Projects', href: '/projects', current: false },
+    { name: 'Skills', href: '/skills', current: false },
+    { name: 'Contact', href: '/contact', current: false },
 ]
 
 function classNames(...classes: string[]) {
@@ -36,16 +38,16 @@ export default function Navbar() {
                                 src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500"
                                 className="h-8 w-auto"
                             />
-                            <span>/Rodrigo Costa</span>
+                            <span className="text-gray-200"> /Rodrigo Costa</span>
                         </div>
                     </div>
                     <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                         <div className="hidden sm:ml-6 sm:block">
                             <div className="flex space-x-4">
                                 {navigation.map((item) => (
-                                    <a
+                                    <Link
                                         key={item.name}
-                                        href={item.href}
+                                        to={item.href}
                                         aria-current={item.current ? 'page' : undefined}
                                         className={classNames(
                                             item.current ? 'bg-gray-950/50 text-white' : 'text-gray-300 hover:bg-white/5 hover:text-white',
@@ -53,14 +55,14 @@ export default function Navbar() {
                                         )}
                                     >
                                         {item.name}
-                                    </a>
+                                    </Link>
                                 ))}
                             </div>
                         </div>
                         
                         <button
                             type="button"
-                            className="relative rounded-full p-1 text-white hover:text-white focus:outline-2 focus:outline-offset-2 focus:outline-indigo-500 bg-indigo-600 hover:bg-indigo-700 hover:border-1 hover:outline-sky-50 flex items-center gap-2 pt-3 pb-3 pl-2.5 pr-2.5 ml-3"
+                            className="relative rounded-full p-1 text-white hover:text-white focus:outline-2 focus:outline-offset-2 focus:outline-indigo-500 bg-indigo-600 hover:bg-indigo-700 hover:border hover:outline-sky-50 flex items-center gap-2 pt-3 pb-3 pl-2.5 pr-2.5 ml-3"
                         >
                             <span className="absolute -inset-1.5" />
                             <ArrowDownTrayIcon aria-hidden="true" className="size-6" />
