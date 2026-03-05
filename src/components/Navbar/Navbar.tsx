@@ -1,13 +1,13 @@
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react'
 import { ArrowDownTrayIcon, Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
 const navigation = [
-    { name: 'Home', href: '/', current: true },
-    { name: 'About', href: '/about', current: false },
-    { name: 'Projects', href: '/projects', current: false },
-    { name: 'Skills', href: '/skills', current: false },
-    { name: 'Contact', href: '/contact', current: false },
+    { name: 'Home', href: '/' },
+    { name: 'About', href: '/about' },
+    { name: 'Projects', href: '/projects' },
+    { name: 'Skills', href: '/skills' },
+    { name: 'Contact', href: '/contact' },
 ]
 
 function classNames(...classes: string[]) {
@@ -15,6 +15,11 @@ function classNames(...classes: string[]) {
 }
 
 export default function Navbar() {
+    
+    function isSelectedPath(path: string): boolean {
+        return useLocation().pathname === path;
+    }
+
     return (
         <Disclosure
             as="nav"
@@ -48,9 +53,9 @@ export default function Navbar() {
                                     <Link
                                         key={item.name}
                                         to={item.href}
-                                        aria-current={item.current ? 'page' : undefined}
+                                        aria-current={isSelectedPath(item.href) ? 'page' : undefined}
                                         className={classNames(
-                                            item.current ? 'bg-gray-950/50 text-white' : 'text-gray-300 hover:bg-white/5 hover:text-white',
+                                            isSelectedPath(item.href) ? 'bg-gray-950/50 text-white' : 'text-gray-300 hover:bg-white/5 hover:text-white',
                                             'rounded-md px-3 py-2 text-sm font-medium',
                                         )}
                                     >
@@ -79,9 +84,9 @@ export default function Navbar() {
                             key={item.name}
                             as="a"
                             href={item.href}
-                            aria-current={item.current ? 'page' : undefined}
+                            aria-current={isSelectedPath(item.href) ? 'page' : undefined}
                             className={classNames(
-                                item.current ? 'bg-gray-950/50 text-white' : 'text-gray-300 hover:bg-white/5 hover:text-white',
+                                isSelectedPath(item.href) ? 'bg-gray-950/50 text-white' : 'text-gray-300 hover:bg-white/5 hover:text-white',
                                 'block rounded-md px-3 py-2 text-base font-medium',
                             )}
                         >

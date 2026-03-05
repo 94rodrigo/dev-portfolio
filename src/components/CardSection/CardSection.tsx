@@ -44,14 +44,14 @@ export default function CardSection() {
                 <div className="mt-20 space-y-12 lg:grid lg:grid-cols-3 lg:gap-x-6 lg:space-y-0">
                     {cardList.map(card => {
                         return <Card 
-                            key={card.title}
-                            title={card.title}
-                            description={card.description}
-                            colorIconBackground={card.colorIconBackground}
-                            href={card.href}
-                            icon={card.icon}
-                            colorButton={card.colorButton}
-                        />
+                                key={card.title}
+                                title={card.title}
+                                description={card.description}
+                                colorIconBackground={card.colorIconBackground}
+                                href={card.href}
+                                icon={card.icon}
+                                colorButton={card.colorButton}
+                            />
                     })}
                 </div>
             </div>
