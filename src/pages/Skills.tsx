@@ -1,8 +1,9 @@
+import BackHomeButton from "../components/BackHome/BackHomeButton";
 
 export default function Skills() {
     return (
         <>
-            <span>Skills</span>
+            <BackHomeButton />
         </>
     );
 }

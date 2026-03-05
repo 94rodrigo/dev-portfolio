@@ -1,3 +1,4 @@
+import BackHomeButton from "../components/BackHome/BackHomeButton";
 import ProjectCard from "../components/ProjectCard/ProjectCard";
 
 export default function Projects() {
@@ -41,17 +42,20 @@ export default function Projects() {
     ]
 
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {projects.map((project, index) => (
-                <ProjectCard 
-                    key={index}
-                    title={project.title}
-                    description={project.description}
-                    href={project.href}
-                    imageSrc={project.imageSrc}
-                    technologies={project.technologies}
-                />
-            ))}
-        </div>
+        <>
+            <BackHomeButton />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {projects.map((project, index) => (
+                    <ProjectCard 
+                        key={index}
+                        title={project.title}
+                        description={project.description}
+                        href={project.href}
+                        imageSrc={project.imageSrc}
+                        technologies={project.technologies}
+                    />
+                ))}
+            </div>
+        </>
     );
 }

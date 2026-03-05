@@ -1,8 +1,9 @@
+import BackHomeButton from "../components/BackHome/BackHomeButton";
 
 export default function About() {
     return (
         <>
-            <span>About</span>
+            <BackHomeButton />
         </>
     );
 }
