@@ -3,6 +3,7 @@ import { ArrowDownTrayIcon, Bars3Icon, XMarkIcon } from '@heroicons/react/24/out
 import { Link, useLocation } from 'react-router-dom'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
 import { useTranslation } from 'react-i18next'
+import mainIcon from "../../assets/icons/main-icon.png";
 
 const defaultNavigation = [
     { nameKey: 'nav.home', href: '/' },
@@ -67,7 +68,7 @@ export default function Navbar() {
                         <div className="flex shrink-0 items-center">
                             <img
                                 alt="Your Company"
-                                src="./icons/image2.png"
+                                src={mainIcon}
                                 className="h-8 w-auto"
                             />
                             <span className="text-gray-200"> /Rodrigo Costa</span>
@@ -121,7 +122,7 @@ export default function Navbar() {
                                             {t('navbar.english')}
                                         </button>
                                     </MenuItem>
-                                    
+
                                     <MenuItem>
                                         <button onClick={() => handleLanguageChange('pt')} className="block w-full text-left px-4 py-2 text-sm text-gray-300 data-focus:bg-white/5 data-focus:text-white data-focus:outline-hidden hover:bg-white/5">
                                             {t('navbar.portuguese')}

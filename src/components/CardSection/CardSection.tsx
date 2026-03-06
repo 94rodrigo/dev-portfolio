@@ -1,7 +1,7 @@
 import Card, { type CardProps } from "../Card/Card";
-import aboutMeIcon from "/icons/about-me-icon.png";
-import myProjectsIcon from "/icons/my-projects-icon.png";
-import skillsIcon from "/icons/skills-icon.png";
+import aboutMeIcon from "../../assets/icons/about-me-icon.png";
+import myProjectsIcon from "../../assets/icons/my-projects-icon.png";
+import skillsIcon from "../../assets/icons/skills-icon.png";
 import { useTranslation } from 'react-i18next';
 
 export default function CardSection() {

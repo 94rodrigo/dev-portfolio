@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next';
+import rodrigoIcon from "../../assets/images/rodrigo-picture.png";
 
 export default function MainSection() {
     const { t } = useTranslation();
@@ -19,7 +20,7 @@ export default function MainSection() {
                 <span className={`font-sans text-gray-600 leading-relaxed text-xl`}>{t('mainSection.subtitle')}</span>
             </div>
             <div className="flex items-center justify-center h-full">
-                <img className="max-w-[75%]" src="/images/rodrigo-picture.png" alt="Rodrigo Costa" />
+                <img className="max-w-[75%]" src={rodrigoIcon} alt="Rodrigo Costa" />
             </div>
         </div>
     );
