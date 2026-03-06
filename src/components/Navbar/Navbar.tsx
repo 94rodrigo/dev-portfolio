@@ -41,7 +41,7 @@ export default function Navbar() {
     const handleDownloadCv = () => {
         const fileName = getCvFileName();
         const link = document.createElement('a');
-        link.href = `/documents/${fileName}`;
+        link.href = `${import.meta.env.BASE_URL}documents/${fileName}`;
         link.download = fileName;
         document.body.appendChild(link);
         link.click();
