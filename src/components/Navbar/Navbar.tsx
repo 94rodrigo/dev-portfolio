@@ -28,8 +28,23 @@ export default function Navbar() {
         return useLocation().pathname === path;
     }
 
+    const getCvFileName = (): string => {
+        const lang = (i18n.resolvedLanguage || i18n.language || 'en').toLowerCase();
+        return lang.startsWith('pt') ? 'Rodrigo_Costa_Currículo.pdf' : 'Rodrigo_Costa_CV.pdf';
+    };
+
     const handleLanguageChange = (lang: string) => {
         i18n.changeLanguage(lang);
+    };
+
+    const handleDownloadCv = () => {
+        const fileName = getCvFileName();
+        const link = document.createElement('a');
+        link.href = `/documents/${fileName}`;
+        link.download = fileName;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
     };
 
     return (
@@ -40,7 +55,6 @@ export default function Navbar() {
             <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
                 <div className="relative flex h-16 items-center justify-between">
                     <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
-                        {/* Mobile menu button*/}
                         <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-white/5 hover:text-white focus:outline-2 focus:-outline-offset-1 focus:outline-indigo-500">
                             <span className="absolute -inset-0.5" />
                             <span className="sr-only">Open main menu</span>
@@ -79,7 +93,9 @@ export default function Navbar() {
                         
                         <button
                             type="button"
+                            onClick={handleDownloadCv}
                             className="relative rounded-full p-1 text-white hover:text-white focus:outline-2 focus:outline-offset-2 focus:outline-indigo-500 bg-indigo-600 hover:bg-indigo-700 hover:border hover:outline-sky-50 flex items-center gap-2 pt-3 pb-3 pl-2.5 pr-2.5 ml-3 mr-3"
+                            id="btn-download-cv"
                         >
                             <span className="absolute -inset-1.5" />
                             <ArrowDownTrayIcon aria-hidden="true" className="size-6" />
