@@ -96,6 +96,7 @@ export default function Navbar() {
                             onClick={handleDownloadCv}
                             className="relative rounded-full p-1 text-white hover:text-white focus:outline-2 focus:outline-offset-2 focus:outline-indigo-500 bg-indigo-600 hover:bg-indigo-700 hover:border hover:outline-sky-50 flex items-center gap-2 pt-3 pb-3 pl-2.5 pr-2.5 ml-3 mr-3"
                             id="btn-download-cv"
+                            title={t('navbar.cvLanguage')}
                         >
                             <span className="absolute -inset-1.5" />
                             <ArrowDownTrayIcon aria-hidden="true" className="size-6" />

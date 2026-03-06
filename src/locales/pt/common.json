@@ -10,7 +10,8 @@
     "downloadCV": "Baixar CV",
     "language": "Idioma",
     "english": "Inglês",
-    "portuguese": "Português"
+    "portuguese": "Português",
+    "cvLanguage": "PDF em português"
   },
   "mainSection": {
     "greeting": "Olá, sou Rodrigo Costa!",

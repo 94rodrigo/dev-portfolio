@@ -10,7 +10,8 @@
     "downloadCV": "Download CV",
     "language": "Language",
     "english": "English",
-    "portuguese": "Portuguese"
+    "portuguese": "Portuguese",
+    "cvLanguage": "PDF in english"
   },
   "mainSection": {
     "greeting": "Hi, I'm Rodrigo Costa!",
