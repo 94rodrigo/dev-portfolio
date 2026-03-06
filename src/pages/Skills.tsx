@@ -4,7 +4,7 @@ export default function Skills() {
     return (
         <>
             <BackHomeButton />
-            
+
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div className="mx-auto py-16 sm:py-24 lg:py-10">
                     <h2 className="text-3xl font-bold tracking-tight text-gray-900">Skills</h2>
@@ -39,7 +39,6 @@ export default function Skills() {
                         <li>Java Spring Boot</li>
                         <li>REST API development</li>
                         <li>Microservices</li>
-                        <li>Authentication / Authorization</li>
                         <li>API design</li>
                     </ul>
 
@@ -58,7 +57,13 @@ export default function Skills() {
                         <li>Docker</li>
                         <li>Linux</li>
                         <li>Maven</li>
-                        <li>npm</li>
+                    </ul>
+
+                    <h4 className="mt-6 text-xl font-semibold text-gray-900 text-left">🌱 Currently Learning:</h4>
+                    
+                    <ul className="mt-4 text-gray-500 list-disc list-inside text-left">
+                        <li>Improving my skills with Python</li>
+                        <li>Machine learning</li>
                     </ul>
                 </div>
             </div>
