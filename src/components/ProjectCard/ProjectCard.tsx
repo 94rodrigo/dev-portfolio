@@ -18,9 +18,13 @@ export default function ProjectCard({ title, description, href, imageSrc, techno
 
             <div id="txt-col" className={`text-left ${imageSrc ? 'flex-1' : ''}`}>
                 <a href={href} target="_blank" rel="noopener noreferrer"><h3 className="mt-0 text-lg font-semibold text-gray-900 hover:underline">{title}</h3></a>
+                
                 <p className="mt-1 text-sm text-gray-500">{description}</p>
+                
                 <br />
+                
                 <p className="mt-1 text-sm text-gray-500"><b>Used Technologies: </b>{technologies}</p>
+                
                 <a href={href} target="_blank" rel="noopener noreferrer">
                     <button 
                         className={`mt-4 inline-flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium text-white cursor-pointer bg-indigo-600 hover:bg-indigo-800`}

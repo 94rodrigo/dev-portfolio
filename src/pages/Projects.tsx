@@ -1,9 +1,9 @@
 import BackHomeButton from "../components/BackHome/BackHomeButton";
-import ProjectCard from "../components/ProjectCard/ProjectCard";
+import ProjectCard, { type ProjectCardProps } from "../components/ProjectCard/ProjectCard";
 
 export default function Projects() {
 
-    const projects = [
+    const projects: ProjectCardProps[] = [
         {
             title: "weather-ai-dashboard",
             description: "Weather Dashboard is a full-stack web application that provides real-time weather information and AI-powered insights for multiple locations. The project is built with a modern technology stack, supporting multiple languages for a global user experience.",
