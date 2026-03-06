@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
 export interface CardProps {
@@ -10,11 +11,12 @@ export interface CardProps {
 }
 
 export default function Card({ icon, title, description, colorIconBackground = "#FFB84D", href = "#", colorButton = "#FFB84D" }: CardProps) {
+    const { t } = useTranslation();
+
     return (
         <div
             className="relative group block rounded-lg border border-gray-200 p-6 pt-12 shadow-sm hover:border-gray-300 hover:ring-1 hover:ring-gray-300"
         >
-            {/* icon circle positioned above the card */}
             {icon && (
                 <div
                     className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 flex h-20 w-20 items-center justify-center rounded-full"
@@ -24,7 +26,6 @@ export default function Card({ icon, title, description, colorIconBackground = "
                 </div>
             )}
 
-            {/* content has extra top padding to avoid overlap */}
             <div className="text-center">
                 <h3 className="mt-0 text-lg font-semibold text-gray-900">{title}</h3>
                 {description && <p className="mt-1 text-sm text-gray-500">{description}</p>}
@@ -35,7 +36,7 @@ export default function Card({ icon, title, description, colorIconBackground = "
                         onMouseEnter={(e) => e.currentTarget.style.backgroundColor = "#4f46e5"}
                         onMouseLeave={(e) => e.currentTarget.style.backgroundColor = colorButton}
                     >
-                        View Details
+                        {t('cardSection.viewDetails')}
                     </button>
                 </Link>
             </div>

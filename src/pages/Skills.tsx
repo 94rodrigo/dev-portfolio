@@ -19,49 +19,54 @@ export default function Skills() {
                     <h4 className="mt-6 text-xl font-semibold text-gray-900 text-left">{t('skills.languages')}</h4>
                     
                     <ul className="mt-4 text-gray-500 list-disc list-inside text-left">
-                        {t('skills.languageList', { returnObjects: true }).map((item: string) => (
-                            <li key={item}>{item}</li>
-                        ))}
+                        <li>Java</li>
+                        <li>TypeScript</li>
+                        <li>Go</li>
+                        <li>Python</li>
                     </ul>
 
                     <h4 className="mt-6 text-xl font-semibold text-gray-900 text-left">{t('skills.frontend')}</h4>
 
                     <ul className="mt-4 text-gray-500 list-disc list-inside text-left">
-                        {t('skills.frontendList', { returnObjects: true }).map((item: string) => (
-                            <li key={item}>{item}</li>
-                        ))}
+                        <li>React</li>
+                        <li>TypeScript</li>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>Tailwind</li>
+                        <li>JavaScript</li>
                     </ul>
 
                     <h4 className="mt-6 text-xl font-semibold text-gray-900 text-left">{t('skills.backend')}</h4>
 
                     <ul className="mt-4 text-gray-500 list-disc list-inside text-left">
-                        {t('skills.backendList', { returnObjects: true }).map((item: string) => (
-                            <li key={item}>{item}</li>
-                        ))}
+                        <li>Java Spring Boot</li>
+                        <li>REST API development</li>
+                        <li>Microservices</li>
+                        <li>API design</li>
                     </ul>
 
                     <h4 className="mt-6 text-xl font-semibold text-gray-900 text-left">{t('skills.databases')}</h4>
 
                     <ul className="mt-4 text-gray-500 list-disc list-inside text-left">
-                        {t('skills.databaseList', { returnObjects: true }).map((item: string) => (
-                            <li key={item}>{item}</li>
-                        ))}
+                        <li>PostgreSQL</li>
+                        <li>MySQL</li>
+                        <li>MongoDB</li>
                     </ul>
 
                     <h4 className="mt-6 text-xl font-semibold text-gray-900 text-left">{t('skills.tools')}</h4>
 
                     <ul className="mt-4 text-gray-500 list-disc list-inside text-left">
-                        {t('skills.toolsList', { returnObjects: true }).map((item: string) => (
-                            <li key={item}>{item}</li>
-                        ))}
+                        <li>Git</li>
+                        <li>Docker</li>
+                        <li>Linux</li>
+                        <li>Maven</li>
                     </ul>
 
                     <h4 className="mt-6 text-xl font-semibold text-gray-900 text-left">{t('skills.learning')}</h4>
                     
                     <ul className="mt-4 text-gray-500 list-disc list-inside text-left">
-                        {t('skills.learningList', { returnObjects: true }).map((item: string) => (
-                            <li key={item}>{item}</li>
-                        ))}
+                        <li>Improving my skills with Python</li>
+                        <li>Machine learning</li>
                     </ul>
                 </div>
             </div>

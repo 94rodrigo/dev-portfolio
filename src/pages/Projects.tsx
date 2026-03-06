@@ -10,7 +10,7 @@ export default function Projects() {
             title: "weather-ai-dashboard",
             description: "Weather Dashboard is a full-stack web application that provides real-time weather information and AI-powered insights for multiple locations. The project is built with a modern technology stack, supporting multiple languages for a global user experience.",
             href: "https://github.com/94rodrigo/weather-ai-dashboard",
-            imageSrc: "https://github-production-user-asset-6210df.s3.amazonaws.com/51063103/550016503-5d7261b4-1997-454b-8698-45a89e085e7c.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20260305%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260305T171927Z&X-Amz-Expires=300&X-Amz-Signature=7fec70fbf3796920619ddebcf567f60df0d73ce099b629ebf49947705d33c310&X-Amz-SignedHeaders=host",
+            imageSrc: "https://github-production-user-asset-6210df.s3.amazonaws.com/51063103/550016503-5d7261b4-1997-454b-8698-45a89e085e7c.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20260306%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260306T165020Z&X-Amz-Expires=300&X-Amz-Signature=b23e263b78c2eb1990b5b129385fbf6bb57bcef89510061c42ccdf724db9ff8f&X-Amz-SignedHeaders=host",
             technologies: "Java, Typescript, React, Spring"
         },
         {

@@ -15,7 +15,7 @@
   "mainSection": {
     "greeting": "Olá, sou Rodrigo Costa!",
     "title": "Desenvolvedor de Software",
-    "subtitle": "Um desenvolvedor de software apaixonado que adora criar soluções inovadoras. Bem-vindo ao meu portfólio!"
+    "subtitle": "Um desenvolvedor de software que adora criar soluções inovadoras. Bem-vindo ao meu portfólio!"
   },
   "cardSection": {
     "heading": "Projetos",
@@ -25,32 +25,27 @@
     "myProjects": "Meus projetos",
     "myProjectsDesc": "Confira alguns dos projetos em que trabalhei.",
     "skills": "Habilidades",
-    "skillsDesc": "Veja as ferramentas e tecnologias nas quais sou especialista."
+    "skillsDesc": "Veja as ferramentas e tecnologias nas quais sou especialista.",
+    "viewDetails": "Ver Detalhes"
   },
   "about": {
     "title": "Sobre Mim",
     "intro": "Olá! Sou Rodrigo, um desenvolvedor de software com mais de 6 anos de experiência construindo aplicações web e sistemas backend.",
     "tech": "Minha stack principal inclui Java, React e TypeScript, e também tenho experiência trabalhando com Go e Python. Gosto de projetar arquiteturas limpas, desenvolver APIs escaláveis e construir aplicações confiáveis que resolvem problemas do mundo real.",
-    "education": "Tenho graus em Engenharia Química e Análise e Desenvolvimento de Sistemas, o que me deu uma mente analítica forte e uma abordagem estruturada para resolução de problemas. Atualmente vivo em Santos, São Paulo, Brasil.",
+    "education": "Tenho graduação em Engenharia Química e Análise e Desenvolvimento de Sistemas, o que me deu uma mente analítica forte e uma abordagem estruturada para resolução de problemas. Atualmente vivo em Santos, São Paulo, Brasil.",
     "languages": "Falo Português, Inglês e Francês, e também tenho conhecimento de trabalho em Espanhol e Alemão.",
     "interests": "Fora da programação, gosto de praticar exercícios físicos, ouvir música, tocar guitarra e ler livros. Acredito que manter um equilíbrio entre tecnologia e interesses pessoais me ajuda a manter a criatividade e motivação.",
     "career": "Sempre estou interessado em aprender novas tecnologias, melhorar minhas habilidades e colaborar em projetos significativos."
   },
   "skills": {
     "title": "Habilidades",
-    "intro": "Aqui estão algumas das tecnologias e ferramentas que uso ao construir aplicações web e serviços backend, e sempre estou ansioso para aprender novos.",
+    "intro": "Aqui estão algumas das tecnologias e ferramentas que uso ao construir aplicações web e serviços backend. Estou sempre interessado em desenvolver novas habilidades.",
     "languages": "💻 Linguagens de Programação",
     "frontend": "⚛️ Frontend",
     "backend": "🧠 Backend",
     "databases": "🗄️ Bancos de Dados",
     "tools": "⚙️ Ferramentas & Tecnologias",
-    "learning": "🌱 Aprendendo Atualmente",
-    "frontendList": ["React", "TypeScript", "HTML", "CSS", "Tailwind", "JavaScript"],
-    "backendList": ["Java Spring Boot", "Desenvolvimento de REST API", "Microsserviços", "Design de API"],
-    "databaseList": ["PostgreSQL", "MySQL", "MongoDB"],
-    "toolsList": ["Git", "Docker", "Linux", "Maven"],
-    "languageList": ["Java", "TypeScript", "Go", "Python"],
-    "learningList": ["Melhorando minhas habilidades com Python", "Machine learning"]
+    "learning": "🌱 Aprendendo Atualmente"
   },
   "projects": {
     "title": "Projetos"

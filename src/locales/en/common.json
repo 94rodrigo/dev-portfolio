@@ -25,7 +25,8 @@
     "myProjects": "My projects",
     "myProjectsDesc": "Check out some of the projects I have worked on.",
     "skills": "Skills",
-    "skillsDesc": "See the tools and technologies I specialize in."
+    "skillsDesc": "See the tools and technologies I specialize in.",
+    "viewDetails": "View Details"
   },
   "about": {
     "title": "About Me",
@@ -38,19 +39,13 @@
   },
   "skills": {
     "title": "Skills",
-    "intro": "Here are some of the technologies and tools I work with when building web applications and backend services, and I'm always eager to learn new ones.",
+    "intro": "Here are some of the technologies and tools I work with when building web applications and backend services, and I'm always interested in learning new ones.",
     "languages": "💻 Programming Languages",
     "frontend": "⚛️ Frontend",
     "backend": "🧠 Backend",
     "databases": "🗄️ Databases",
     "tools": "⚙️ Tools & Technologies",
-    "learning": "🌱 Currently Learning",
-    "frontendList": ["React", "TypeScript", "HTML", "CSS", "Tailwind", "JavaScript"],
-    "backendList": ["Java Spring Boot", "REST API development", "Microservices", "API design"],
-    "databaseList": ["PostgreSQL", "MySQL", "MongoDB"],
-    "toolsList": ["Git", "Docker", "Linux", "Maven"],
-    "languageList": ["Java", "TypeScript", "Go", "Python"],
-    "learningList": ["Improving my skills with Python", "Machine learning"]
+    "learning": "🌱 Currently Learning"
   },
   "projects": {
     "title": "Projects"
