@@ -28,7 +28,7 @@ export default function Card({ icon, title, description, colorIconBackground = "
             <div className="text-center">
                 <h3 className="mt-0 text-lg font-semibold text-gray-900">{title}</h3>
                 {description && <p className="mt-1 text-sm text-gray-500">{description}</p>}
-                <Link to={href}>
+                <Link to={href} onClick={() => window.scrollTo(0, 0)}>
                     <button 
                         className={`mt-4 inline-flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium text-white cursor-pointer`}
                         style={{ backgroundColor: colorButton }}

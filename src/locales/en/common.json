@@ -1,0 +1,69 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "skills": "Skills",
+    "contact": "Contact"
+  },
+  "navbar": {
+    "downloadCV": "Download CV",
+    "language": "Language",
+    "english": "English",
+    "portuguese": "Portuguese"
+  },
+  "mainSection": {
+    "greeting": "Hi, I'm Rodrigo Costa!",
+    "title": "Software Developer",
+    "subtitle": "A passionate software developer with a love for creating innovative solutions. Welcome to my portfolio!"
+  },
+  "cardSection": {
+    "heading": "Projects",
+    "description": "Here are some of my projects. Click on the cards to see more details.",
+    "aboutMe": "About Me",
+    "aboutMeDesc": "Get to know more about me and my journey as a software developer.",
+    "myProjects": "My projects",
+    "myProjectsDesc": "Check out some of the projects I have worked on.",
+    "skills": "Skills",
+    "skillsDesc": "See the tools and technologies I specialize in."
+  },
+  "about": {
+    "title": "About Me",
+    "intro": "Hi! I'm Rodrigo, a software developer with over 6 years of experience building web applications and backend systems.",
+    "tech": "My main stack includes Java, React, and TypeScript, and I also have experience working with Go and Python. I enjoy designing clean architectures, developing scalable APIs, and building reliable applications that solve real-world problems.",
+    "education": "I hold degrees in Chemical Engineering and Systems Analysis and Development, which gave me a strong analytical mindset and a structured approach to problem solving. I currently live in Santos, São Paulo, Brazil.",
+    "languages": "I speak Portuguese, English, and French, and I also have working knowledge of Spanish and German.",
+    "interests": "Outside of programming, I enjoy practicing physical exercises, listening to music, playing the guitar, and reading books. I believe maintaining a balance between technology and personal interests helps me stay creative and motivated.",
+    "career": "I'm always interested in learning new technologies, improving my skills, and collaborating on meaningful projects."
+  },
+  "skills": {
+    "title": "Skills",
+    "intro": "Here are some of the technologies and tools I work with when building web applications and backend services, and I'm always eager to learn new ones.",
+    "languages": "💻 Programming Languages",
+    "frontend": "⚛️ Frontend",
+    "backend": "🧠 Backend",
+    "databases": "🗄️ Databases",
+    "tools": "⚙️ Tools & Technologies",
+    "learning": "🌱 Currently Learning",
+    "frontendList": ["React", "TypeScript", "HTML", "CSS", "Tailwind", "JavaScript"],
+    "backendList": ["Java Spring Boot", "REST API development", "Microservices", "API design"],
+    "databaseList": ["PostgreSQL", "MySQL", "MongoDB"],
+    "toolsList": ["Git", "Docker", "Linux", "Maven"],
+    "languageList": ["Java", "TypeScript", "Go", "Python"],
+    "learningList": ["Improving my skills with Python", "Machine learning"]
+  },
+  "projects": {
+    "title": "Projects"
+  },
+  "contact": {
+    "title": "Contact",
+    "intro": "If you'd like to discuss a project, job opportunity, or just connect, feel free to reach out. I'll be happy to talk!",
+    "email": "Email",
+    "linkedin": "LinkedIn",
+    "github": "GitHub"
+  },
+  "footer": {
+    "credit": "Developped by Rodrigo Costa"
+  },
+  "backButton": "← Home"
+}

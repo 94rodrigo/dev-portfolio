@@ -1,13 +1,15 @@
-import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react'
+import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 import { ArrowDownTrayIcon, Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import { Link, useLocation } from 'react-router-dom'
+import { ChevronDownIcon } from '@heroicons/react/20/solid'
+import { useTranslation } from 'react-i18next'
 
-const navigation = [
-    { name: 'Home', href: '/' },
-    { name: 'About', href: '/about' },
-    { name: 'Projects', href: '/projects' },
-    { name: 'Skills', href: '/skills' },
-    { name: 'Contact', href: '/contact' },
+const defaultNavigation = [
+    { nameKey: 'nav.home', href: '/' },
+    { nameKey: 'nav.about', href: '/about' },
+    { nameKey: 'nav.projects', href: '/projects' },
+    { nameKey: 'nav.skills', href: '/skills' },
+    { nameKey: 'nav.contact', href: '/contact' },
 ]
 
 function classNames(...classes: string[]) {
@@ -15,10 +17,20 @@ function classNames(...classes: string[]) {
 }
 
 export default function Navbar() {
+    const { t, i18n } = useTranslation();
+    
+    const navigation = defaultNavigation.map(item => ({
+        ...item,
+        name: t(item.nameKey),
+    }));
     
     function isSelectedPath(path: string): boolean {
         return useLocation().pathname === path;
     }
+
+    const handleLanguageChange = (lang: string) => {
+        i18n.changeLanguage(lang);
+    };
 
     return (
         <Disclosure
@@ -51,7 +63,7 @@ export default function Navbar() {
                             <div className="flex space-x-4">
                                 {navigation.map((item) => (
                                     <Link
-                                        key={item.name}
+                                        key={item.nameKey}
                                         to={item.href}
                                         aria-current={isSelectedPath(item.href) ? 'page' : undefined}
                                         className={classNames(
@@ -67,12 +79,37 @@ export default function Navbar() {
                         
                         <button
                             type="button"
-                            className="relative rounded-full p-1 text-white hover:text-white focus:outline-2 focus:outline-offset-2 focus:outline-indigo-500 bg-indigo-600 hover:bg-indigo-700 hover:border hover:outline-sky-50 flex items-center gap-2 pt-3 pb-3 pl-2.5 pr-2.5 ml-3"
+                            className="relative rounded-full p-1 text-white hover:text-white focus:outline-2 focus:outline-offset-2 focus:outline-indigo-500 bg-indigo-600 hover:bg-indigo-700 hover:border hover:outline-sky-50 flex items-center gap-2 pt-3 pb-3 pl-2.5 pr-2.5 ml-3 mr-3"
                         >
                             <span className="absolute -inset-1.5" />
                             <ArrowDownTrayIcon aria-hidden="true" className="size-6" />
-                            <span>Download CV</span>
+                            <span>{t('navbar.downloadCV')}</span>
                         </button>
+
+                        <Menu as="div" className="relative inline-block">
+                            <MenuButton className="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white/10 px-3 py-2 text-sm font-semibold text-white inset-ring-1 inset-ring-white/5 hover:bg-white/20">
+                                {t('navbar.language')}
+                                <ChevronDownIcon aria-hidden="true" className="-mr-1 size-5 text-gray-400" />
+                            </MenuButton>
+
+                            <MenuItems
+                                transition
+                                className="absolute right-0 z-10 mt-2 w-35 origin-top-right rounded-md bg-gray-800 outline-1 -outline-offset-1 outline-white/10 transition data-closed:scale-95 data-closed:transform data-closed:opacity-0 data-enter:duration-100 data-enter:ease-out data-leave:duration-75 data-leave:ease-in"
+                            >
+                                <div className="py-1">
+                                    <MenuItem>
+                                        <button onClick={() => handleLanguageChange('en')} className="block w-full text-left px-4 py-2 text-sm text-gray-300 data-focus:bg-white/5 data-focus:text-white data-focus:outline-hidden hover:bg-white/5">
+                                            {t('navbar.english')}
+                                        </button>
+                                    </MenuItem>
+                                    <MenuItem>
+                                        <button onClick={() => handleLanguageChange('pt')} className="block w-full text-left px-4 py-2 text-sm text-gray-300 data-focus:bg-white/5 data-focus:text-white data-focus:outline-hidden hover:bg-white/5">
+                                            {t('navbar.portuguese')}
+                                        </button>
+                                    </MenuItem>
+                                </div>
+                            </MenuItems>
+                        </Menu>
                     </div>
                 </div>
             </div>

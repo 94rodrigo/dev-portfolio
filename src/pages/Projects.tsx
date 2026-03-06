@@ -1,7 +1,9 @@
 import BackHomeButton from "../components/BackHome/BackHomeButton";
 import ProjectCard, { type ProjectCardProps } from "../components/ProjectCard/ProjectCard";
+import { useTranslation } from 'react-i18next';
 
 export default function Projects() {
+    const { t } = useTranslation();
 
     const projects: ProjectCardProps[] = [
         {
@@ -44,6 +46,7 @@ export default function Projects() {
     return (
         <>
             <BackHomeButton />
+            <h1 className="text-3xl font-bold mb-6 text-gray-700">{t('projects.title')}</h1>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {projects.map((project, index) => (
                     <ProjectCard 
