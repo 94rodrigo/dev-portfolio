@@ -10,7 +10,7 @@ export default function Projects() {
             title: "weather-ai-dashboard",
             description: "Weather Dashboard is a full-stack web application that provides real-time weather information and AI-powered insights for multiple locations. The project is built with a modern technology stack, supporting multiple languages for a global user experience.",
             href: "https://github.com/94rodrigo/weather-ai-dashboard",
-            imageSrc: "https://private-user-images.githubusercontent.com/51063103/550016503-5d7261b4-1997-454b-8698-45a89e085e7c.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NzI4NDI1MDEsIm5iZiI6MTc3Mjg0MjIwMSwicGF0aCI6Ii81MTA2MzEwMy81NTAwMTY1MDMtNWQ3MjYxYjQtMTk5Ny00NTRiLTg2OTgtNDVhODllMDg1ZTdjLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjAzMDclMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwMzA3VDAwMTAwMVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTVjOTIzZjUxMDUwNGIzOTQ5NmVkYjYyMzNkZTAzMGJjNDY4YTg0MzQ3NWY5Nzc4ZjIzYTMwZGYwN2U2MjQ1ZWImWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.lL0kpMjCjMZo3NeZ91V1gEDkD4X1hO2-rYhu3jIP1xM",
+            imageSrc: "https://github.com/user-attachments/assets/5d7261b4-1997-454b-8698-45a89e085e7c",
             technologies: "Java, Typescript, React, Spring"
         },
         {
