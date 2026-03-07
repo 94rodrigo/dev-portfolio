@@ -5,6 +5,7 @@ import skillsIcon from "../../assets/icons/skills-icon.png";
 import { useTranslation } from 'react-i18next';
 
 export default function CardSection() {
+    const PROJECT_NAME = '/dev-portfolio';
     const { t } = useTranslation();
 
     const cardList: CardProps[] = [
@@ -12,7 +13,7 @@ export default function CardSection() {
             title: t('cardSection.aboutMe'),
             description: t('cardSection.aboutMeDesc'),
             colorIconBackground: "#F2E6E0",
-            href: "/about",
+            href: `${PROJECT_NAME}/about`,
             icon: aboutMeIcon,
             colorButton: "#FAA03F"
         },
@@ -20,7 +21,7 @@ export default function CardSection() {
             title: t('cardSection.myProjects'),
             description: t('cardSection.myProjectsDesc'),
             colorIconBackground: "#D8DCF8",
-            href: "/projects",
+            href: `${PROJECT_NAME}/projects`,
             icon: myProjectsIcon,
             colorButton: "#6A4EBE"
         },
@@ -28,7 +29,7 @@ export default function CardSection() {
             title: t('cardSection.skills'),
             description: t('cardSection.skillsDesc'),
             colorIconBackground: "#DFF0FB",
-            href: "/skills",
+            href: `${PROJECT_NAME}/skills`,
             icon: skillsIcon,
             colorButton: "#3FABC4"
         }

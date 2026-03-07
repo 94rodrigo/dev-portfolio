@@ -5,12 +5,15 @@ import { ChevronDownIcon } from '@heroicons/react/20/solid'
 import { useTranslation } from 'react-i18next'
 import mainIcon from "../../assets/icons/main-icon.png";
 
+
+const PROJECT_NAME = '/dev-portfolio';
+
 const defaultNavigation = [
-    { nameKey: 'nav.home', href: '/' },
-    { nameKey: 'nav.about', href: '/about' },
-    { nameKey: 'nav.projects', href: '/projects' },
-    { nameKey: 'nav.skills', href: '/skills' },
-    { nameKey: 'nav.contact', href: '/contact' },
+    { nameKey: 'nav.home', href: PROJECT_NAME },
+    { nameKey: 'nav.about', href: `${PROJECT_NAME}/about` },
+    { nameKey: 'nav.projects', href: `${PROJECT_NAME}/projects` },
+    { nameKey: 'nav.skills', href: `${PROJECT_NAME}/skills` },
+    { nameKey: 'nav.contact', href: `${PROJECT_NAME}/contact` },
 ]
 
 function classNames(...classes: string[]) {
