@@ -48,6 +48,24 @@ export default function Navbar() {
         document.body.removeChild(link);
     };
 
+    const getDownloadCvButton = () => {
+        return (
+            <div className="flex justify-center">
+                <button
+                    type="button"
+                    onClick={handleDownloadCv}
+                    className="relative rounded-full p-1 text-white hover:text-white focus:outline-2 focus:outline-offset-2 focus:outline-indigo-500 bg-indigo-600 hover:bg-indigo-700 hover:border hover:outline-sky-50 flex items-center gap-2 pt-3 pb-3 pl-2.5 pr-2.5 ml-3 mr-3"
+                    id="btn-download-cv"
+                    title={t('navbar.cvLanguage')}
+                >
+                    <span className="absolute -inset-1.5" />
+                    <ArrowDownTrayIcon aria-hidden="true" className="size-6" />
+                    <span>{t('navbar.downloadCV')}</span>
+                </button>
+            </div>
+        );
+    };
+
     return (
         <Disclosure
             as="nav"
@@ -64,7 +82,7 @@ export default function Navbar() {
                         </DisclosureButton>
                     </div>
 
-                    <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+                    <div className="hidden sm:flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                         <div className="flex shrink-0 items-center">
                             <img
                                 alt="Your Company"
@@ -85,26 +103,16 @@ export default function Navbar() {
                                         aria-current={isSelectedPath(item.href) ? 'page' : undefined}
                                         className={classNames(
                                             isSelectedPath(item.href) ? 'bg-gray-950/50 text-white' : 'text-gray-300 hover:bg-white/5 hover:text-white',
-                                            'rounded-md px-3 py-2 text-sm font-medium',
+                                            'flex items-center rounded-md px-3 py-2 text-sm font-medium',
                                         )}
                                     >
                                         {item.name}
                                     </Link>
                                 ))}
+                                {getDownloadCvButton()}
                             </div>
                         </div>
                         
-                        <button
-                            type="button"
-                            onClick={handleDownloadCv}
-                            className="relative rounded-full p-1 text-white hover:text-white focus:outline-2 focus:outline-offset-2 focus:outline-indigo-500 bg-indigo-600 hover:bg-indigo-700 hover:border hover:outline-sky-50 flex items-center gap-2 pt-3 pb-3 pl-2.5 pr-2.5 ml-3 mr-3"
-                            id="btn-download-cv"
-                            title={t('navbar.cvLanguage')}
-                        >
-                            <span className="absolute -inset-1.5" />
-                            <ArrowDownTrayIcon aria-hidden="true" className="size-6" />
-                            <span>{t('navbar.downloadCV')}</span>
-                        </button>
 
                         <Menu as="div" className="relative inline-block">
                             <MenuButton className="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white/10 px-3 py-2 text-sm font-semibold text-white inset-ring-1 inset-ring-white/5 hover:bg-white/20">
@@ -151,6 +159,7 @@ export default function Navbar() {
                             {item.name}
                         </DisclosureButton>
                     ))}
+                    {getDownloadCvButton()}
                 </div>
             </DisclosurePanel>
         </Disclosure>

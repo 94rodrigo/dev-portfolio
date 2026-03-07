@@ -5,8 +5,8 @@ export default function MainSection() {
     const { t } = useTranslation();
 
     return (
-        <div className="mx-auto max-w-7xl text-gray-600 px-4 sm:px-6 lg:px-8 rounded-lg border border-gray-200 grid grid-cols-2 justify-items-center items-center h-full">
-            <div>
+        <div className="mx-auto max-w-7xl text-gray-600 px-4 sm:px-6 lg:px-8 rounded-lg border border-gray-200 grid grid-cols-1 sm:grid-cols-2 justify-items-center items-center h-full">
+            <div id="intro-text">
                 <span className="text-3xl">{t('mainSection.greeting')}</span>
                 <br />
                 <br />
@@ -19,7 +19,7 @@ export default function MainSection() {
                 <br />
                 <span className={`font-sans text-gray-600 leading-relaxed text-xl`}>{t('mainSection.subtitle')}</span>
             </div>
-            <div className="flex items-center justify-center h-full">
+            <div id="profile-image" className="flex items-center justify-center h-full">
                 <img className="max-w-[75%]" src={rodrigoIcon} alt="Rodrigo Costa" />
             </div>
         </div>
