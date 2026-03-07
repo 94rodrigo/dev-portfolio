@@ -10,7 +10,11 @@ export default function About() {
             <div className="mx-auto">
                 <h1 className="text-3xl font-bold mb-6 text-gray-700">{t('about.title')}</h1>
 
-                <img className="w-48 h-48 rounded-full mx-auto mb-6 mr-10 float-left" src="https://avatars.githubusercontent.com/u/51063103?v=4" alt="Profile Picture" />
+                <img
+                    className="w-48 h-48 rounded-full mx-auto mb-6 sm:mx-0 sm:float-left sm:mr-10"
+                    src="https://avatars.githubusercontent.com/u/51063103?v=4"
+                    alt="Profile Picture"
+                />
 
                 <p className="text-lg text-justify text-gray-600 mt-4">
                     {t('about.intro')}
