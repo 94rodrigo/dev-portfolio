@@ -149,10 +149,9 @@ export default function Navbar() {
             <DisclosurePanel className="sm:hidden">
                 <div className="space-y-1 px-2 pt-2 pb-3">
                     {navigation.map((item) => (
-                        <DisclosureButton
+                        <Link
                             key={item.name}
-                            as="a"
-                            href={item.href}
+                            to={item.href}
                             aria-current={isSelectedPath(item.href) ? 'page' : undefined}
                             className={classNames(
                                 isSelectedPath(item.href) ? 'bg-gray-950/50 text-white' : 'text-gray-300 hover:bg-white/5 hover:text-white',
@@ -160,7 +159,7 @@ export default function Navbar() {
                             )}
                         >
                             {item.name}
-                        </DisclosureButton>
+                        </Link>
                     ))}
                     {getDownloadCvButton()}
                 </div>
