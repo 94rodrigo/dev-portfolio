@@ -6,6 +6,12 @@ import { CONTACT } from '../../constants';
 
 const FEATURED: Project[] = [
     {
+        key: "rag",
+        repo: "rag-document-chat",
+        imageSrc: "https://raw.githubusercontent.com/94rodrigo/rag-document-chat/master/docs/assets/screenshot-chat.png",
+        stack: ["Python", "FastAPI", "PostgreSQL + pgvector", "Celery", "Redis", "React", "TypeScript", "Stripe"],
+    },
+    {
         key: "weather",
         repo: "weather-ai-dashboard",
         imageSrc: "https://github.com/user-attachments/assets/5d7261b4-1997-454b-8698-45a89e085e7c",
@@ -16,15 +22,10 @@ const FEATURED: Project[] = [
         repo: "simulador-carteira-acoes",
         stack: ["Go", "React", "Vite", "TypeScript"],
     },
-    {
-        key: "currency",
-        repo: "multilingual-currency-exchange",
-        imageSrc: "https://camo.githubusercontent.com/786d5fb6542f729c3cfbb23708db40681b9d33e67c9121a0554b48df16e4e013/68747470733a2f2f692e706f7374696d672e63632f4e46594d327257782f436170747572612d64652d74656c612d323032342d30312d32322d3139333932372e6a7067",
-        stack: ["React", "JavaScript"],
-    },
 ];
 
 const OTHERS: Project[] = [
+    { key: "currency", repo: "multilingual-currency-exchange", stack: ["React", "JavaScript"] },
     { key: "statusChecker", repo: "golang-status-checker-website", stack: ["Go", "HTML", "Sass"] },
     { key: "megaSena", repo: "conferidor_resultados_mega_sena", stack: ["Python"] },
 ];

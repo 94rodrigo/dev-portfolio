@@ -7,9 +7,9 @@ export default function Skills() {
     const groups = [
         { key: "languages", items: ["Java", "TypeScript", "JavaScript", "Go", "Python"] },
         { key: "frontend", items: ["React", "HTML", "CSS", "Tailwind CSS"] },
-        { key: "backend", items: ["Spring Boot", t('skills.items.rest'), t('skills.items.microservices'), t('skills.items.apiDesign')] },
-        { key: "databases", items: ["PostgreSQL", "MySQL", "MongoDB"] },
-        { key: "tools", items: ["Git", "Docker", "Linux", "Maven"] },
+        { key: "backend", items: ["Spring Boot", "FastAPI", t('skills.items.rest'), t('skills.items.microservices'), t('skills.items.apiDesign')] },
+        { key: "databases", items: ["PostgreSQL", "pgvector", "MySQL", "MongoDB", "Redis"] },
+        { key: "tools", items: ["Git", "Docker", "Linux", "Maven", "Celery"] },
         { key: "learning", items: [t('skills.items.python'), t('skills.items.ml')] },
     ];
 

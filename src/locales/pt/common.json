@@ -46,6 +46,10 @@
     "repo": "Código no GitHub",
     "noImage": "Sem captura de tela",
     "items": {
+      "rag": {
+        "title": "Citenest — chat com documentos (RAG)",
+        "description": "SaaS que responde perguntas sobre seus documentos com citações da página de origem, em streaming. Busca híbrida (vetorial + BM25 com Reciprocal Rank Fusion), re-ranking com cross-encoder, ingestão assíncrona em workers Celery e assinaturas com Stripe. Frontend React em seis idiomas, 74 testes e CI."
+      },
       "weather": {
         "title": "Weather AI Dashboard",
         "description": "Aplicação full-stack que mostra o clima em tempo real de várias cidades e gera análises com IA. Backend em Spring, frontend em React e interface em vários idiomas."
