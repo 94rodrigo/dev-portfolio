@@ -13,12 +13,19 @@ const resources = {
   },
 };
 
+// Keep <html lang> in sync so screen readers and hyphenation use the right language
+i18n.on('languageChanged', (lng) => {
+  document.documentElement.lang = lng.startsWith('pt') ? 'pt-BR' : 'en';
+});
+
 i18n
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
     resources,
     fallbackLng: 'en',
+    supportedLngs: ['en', 'pt'],
+    nonExplicitSupportedLngs: true,
     defaultNS: 'common',
     ns: 'common',
     debug: false,

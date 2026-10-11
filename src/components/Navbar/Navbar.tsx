@@ -1,168 +1,146 @@
-import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
-import { ArrowDownTrayIcon, Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
-import { Link, useLocation } from 'react-router-dom'
-import { ChevronDownIcon } from '@heroicons/react/20/solid'
+import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react'
+import { ArrowDownTrayIcon, Bars3Icon, MoonIcon, SunIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { useTranslation } from 'react-i18next'
-import mainIcon from "../../assets/icons/main-icon.png";
+import { Link } from 'react-router-dom'
+import { SECTIONS } from '../../constants'
+import { useActiveSection } from '../../hooks/useActiveSection'
+import { useCvLink } from '../../hooks/useCvLink'
+import { setTheme, useTheme } from '../../hooks/useTheme'
 
-
-const PROJECT_NAME = '/dev-portfolio/';
-
-const defaultNavigation = [
-    { nameKey: 'nav.home', href: PROJECT_NAME },
-    { nameKey: 'nav.about', href: `${PROJECT_NAME}about` },
-    { nameKey: 'nav.projects', href: `${PROJECT_NAME}projects` },
-    { nameKey: 'nav.skills', href: `${PROJECT_NAME}skills` },
-    { nameKey: 'nav.contact', href: `${PROJECT_NAME}contact` },
+const LANGUAGES = [
+    { code: 'pt', label: 'PT' },
+    { code: 'en', label: 'EN' },
 ]
 
-function classNames(...classes: string[]) {
-    return classes.filter(Boolean).join(' ')
+function LanguageToggle() {
+    const { t, i18n } = useTranslation();
+
+    return (
+        <div role="group" aria-label={t('navbar.language')} className="flex rounded border border-line p-0.5 font-mono text-xs">
+            {LANGUAGES.map((lang) => (
+                <button
+                    key={lang.code}
+                    type="button"
+                    lang={lang.code}
+                    aria-pressed={i18n.resolvedLanguage === lang.code}
+                    onClick={() => i18n.changeLanguage(lang.code)}
+                    className="cursor-pointer rounded-sm px-2 py-1 text-ink-muted transition-colors hover:text-ink aria-pressed:bg-ink aria-pressed:text-paper"
+                >
+                    {lang.label}
+                </button>
+            ))}
+        </div>
+    );
+}
+
+function ThemeToggle() {
+    const { t } = useTranslation();
+    const theme = useTheme();
+    const next = theme === 'dark' ? 'light' : 'dark';
+    const label = next === 'dark' ? t('nav.themeDark') : t('nav.themeLight');
+
+    return (
+        <button
+            type="button"
+            onClick={() => setTheme(next)}
+            aria-label={label}
+            title={label}
+            className="cursor-pointer rounded border border-line p-1.5 text-ink-muted transition-colors hover:text-ink"
+        >
+            {theme === 'dark'
+                ? <SunIcon aria-hidden="true" className="size-4" />
+                : <MoonIcon aria-hidden="true" className="size-4" />}
+        </button>
+    );
+}
+
+function CvLink() {
+    const { t } = useTranslation();
+    const cv = useCvLink();
+
+    return (
+        <a
+            href={cv.href}
+            download={cv.fileName}
+            title={cv.title}
+            className="inline-flex items-center gap-2 rounded bg-accent px-3 py-2 text-sm font-medium text-accent-ink transition-colors hover:bg-accent-strong"
+        >
+            <ArrowDownTrayIcon aria-hidden="true" className="size-4" />
+            {t('navbar.downloadCV')}
+        </a>
+    );
 }
 
 export default function Navbar() {
-    const { t, i18n } = useTranslation();
-    
-    const navigation = defaultNavigation.map(item => ({
-        ...item,
-        name: t(item.nameKey),
-    }));
-    
-    function isSelectedPath(path: string): boolean {
-        return useLocation().pathname === path;
-    }
-
-    const getCvFileName = (): string => {
-        const lang = (i18n.resolvedLanguage || i18n.language || 'en').toLowerCase();
-        return lang.startsWith('pt') ? 'Rodrigo_Costa_Currículo.pdf' : 'Rodrigo_Costa_CV.pdf';
-    };
-
-    const handleLanguageChange = (lang: string) => {
-        i18n.changeLanguage(lang);
-    };
-
-    const handleDownloadCv = () => {
-        const fileName = getCvFileName();
-        const link = document.createElement('a');
-        link.href = `${import.meta.env.BASE_URL}documents/${fileName}`;
-        link.download = fileName;
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-    };
-
-    const getDownloadCvButton = () => {
-        return (
-            <div className="flex justify-center">
-                <button
-                    type="button"
-                    onClick={handleDownloadCv}
-                    className="relative rounded-full p-1 text-white hover:text-white focus:outline-2 focus:outline-offset-2 focus:outline-indigo-500 bg-indigo-600 hover:bg-indigo-700 hover:border hover:outline-sky-50 flex items-center gap-2 pt-3 pb-3 pl-2.5 pr-2.5 ml-3 mr-3"
-                    id="btn-download-cv"
-                    title={t('navbar.cvLanguage')}
-                >
-                    <span className="absolute -inset-1.5" />
-                    <ArrowDownTrayIcon aria-hidden="true" className="size-6" />
-                    <span>{t('navbar.downloadCV')}</span>
-                </button>
-            </div>
-        );
-    };
+    const { t } = useTranslation();
+    const active = useActiveSection(SECTIONS);
 
     return (
-        <Disclosure
-            as="nav"
-            className="relative bg-gray-800 after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:h-px after:bg-white/10"
-        >
-            <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-                <div className="relative flex h-16 items-center justify-between">
-                    <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
-                        <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-white/5 hover:text-white focus:outline-2 focus:-outline-offset-1 focus:outline-indigo-500">
-                            <span className="absolute -inset-0.5" />
-                            <span className="sr-only">Open main menu</span>
-                            <Bars3Icon aria-hidden="true" className="block size-6 group-data-open:hidden" />
-                            <XMarkIcon aria-hidden="true" className="hidden size-6 group-data-open:block" />
-                        </DisclosureButton>
-                    </div>
+        <Disclosure as="header" className="sticky top-0 z-40 border-b border-line bg-paper/85 backdrop-blur-md">
+            <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-6 px-4 sm:px-6 lg:px-8">
+                <Link to="/#top" className="flex items-center gap-3 font-medium">
+                    <span aria-hidden="true" className="grid size-8 place-items-center rounded bg-accent font-mono text-sm font-semibold text-accent-ink">
+                        RC
+                    </span>
+                    Rodrigo Costa
+                </Link>
 
-                    <div className="hidden sm:flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-                        <div className="flex shrink-0 items-center">
-                            <img
-                                alt="Your Company"
-                                src={mainIcon}
-                                className="h-8 w-auto"
-                            />
-                            <span className="text-gray-200"> /Rodrigo Costa</span>
-                        </div>
-                    </div>
-
-                    <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                        <div className="hidden sm:ml-6 sm:block">
-                            <div className="flex space-x-4">
-                                {navigation.map((item) => (
+                <div className="hidden items-center gap-6 md:flex">
+                    <nav aria-label={t('nav.primary')}>
+                        <ul className="flex items-center gap-6 text-sm">
+                            {SECTIONS.map((id) => (
+                                <li key={id}>
                                     <Link
-                                        key={item.nameKey}
-                                        to={item.href}
-                                        aria-current={isSelectedPath(item.href) ? 'page' : undefined}
-                                        className={classNames(
-                                            isSelectedPath(item.href) ? 'bg-gray-950/50 text-white' : 'text-gray-300 hover:bg-white/5 hover:text-white',
-                                            'flex items-center rounded-md px-3 py-2 text-sm font-medium',
-                                        )}
+                                        to={`/#${id}`}
+                                        aria-current={active === id ? 'location' : undefined}
+                                        className="relative py-2 text-ink-muted transition-colors hover:text-ink aria-[current]:text-ink aria-[current]:after:absolute aria-[current]:after:inset-x-0 aria-[current]:after:-bottom-px aria-[current]:after:h-px aria-[current]:after:bg-accent"
                                     >
-                                        {item.name}
+                                        {t(`nav.${id}`)}
                                     </Link>
-                                ))}
-                                {getDownloadCvButton()}
-                            </div>
-                        </div>
-                        
-
-                        <Menu as="div" className="relative inline-block">
-                            <MenuButton className="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white/10 px-3 py-2 text-sm font-semibold text-white inset-ring-1 inset-ring-white/5 hover:bg-white/20">
-                                {t('navbar.language')}
-                                <ChevronDownIcon aria-hidden="true" className="-mr-1 size-5 text-gray-400" />
-                            </MenuButton>
-
-                            <MenuItems
-                                transition
-                                className="absolute right-0 z-10 mt-2 w-35 origin-top-right rounded-md bg-gray-800 outline-1 -outline-offset-1 outline-white/10 transition data-closed:scale-95 data-closed:transform data-closed:opacity-0 data-enter:duration-100 data-enter:ease-out data-leave:duration-75 data-leave:ease-in"
-                            >
-                                <div className="py-1">
-                                    <MenuItem>
-                                        <button onClick={() => handleLanguageChange('en')} className="block w-full text-left px-4 py-2 text-sm text-gray-300 data-focus:bg-white/5 data-focus:text-white data-focus:outline-hidden hover:bg-white/5">
-                                            {t('navbar.english')}
-                                        </button>
-                                    </MenuItem>
-
-                                    <MenuItem>
-                                        <button onClick={() => handleLanguageChange('pt')} className="block w-full text-left px-4 py-2 text-sm text-gray-300 data-focus:bg-white/5 data-focus:text-white data-focus:outline-hidden hover:bg-white/5">
-                                            {t('navbar.portuguese')}
-                                        </button>
-                                    </MenuItem>
-                                </div>
-                            </MenuItems>
-                        </Menu>
+                                </li>
+                            ))}
+                        </ul>
+                    </nav>
+                    <div className="flex items-center gap-2">
+                        <LanguageToggle />
+                        <ThemeToggle />
                     </div>
+                    <CvLink />
                 </div>
+
+                <DisclosureButton className="group -mr-2 rounded p-2 text-ink-muted hover:text-ink md:hidden">
+                    <span className="sr-only group-data-open:hidden">{t('nav.openMenu')}</span>
+                    <span className="sr-only hidden group-data-open:inline">{t('nav.closeMenu')}</span>
+                    <Bars3Icon aria-hidden="true" className="block size-6 group-data-open:hidden" />
+                    <XMarkIcon aria-hidden="true" className="hidden size-6 group-data-open:block" />
+                </DisclosureButton>
             </div>
 
-            <DisclosurePanel className="sm:hidden">
-                <div className="space-y-1 px-2 pt-2 pb-3">
-                    {navigation.map((item) => (
-                        <Link
-                            key={item.name}
-                            to={item.href}
-                            aria-current={isSelectedPath(item.href) ? 'page' : undefined}
-                            className={classNames(
-                                isSelectedPath(item.href) ? 'bg-gray-950/50 text-white' : 'text-gray-300 hover:bg-white/5 hover:text-white',
-                                'block rounded-md px-3 py-2 text-base font-medium',
-                            )}
-                        >
-                            {item.name}
-                        </Link>
-                    ))}
-                    {getDownloadCvButton()}
-                </div>
+            <DisclosurePanel className="border-t border-line md:hidden">
+                <nav aria-label={t('nav.primary')} className="mx-auto max-w-6xl px-4 py-4 sm:px-6">
+                    <ul className="space-y-1">
+                        {SECTIONS.map((id) => (
+                            <li key={id}>
+                                {/* DisclosureButton as a link closes the panel on navigation */}
+                                <DisclosureButton
+                                    as={Link}
+                                    to={`/#${id}`}
+                                    aria-current={active === id ? 'location' : undefined}
+                                    className="block rounded px-2 py-2 text-base text-ink-muted hover:text-ink aria-[current]:text-ink"
+                                >
+                                    {t(`nav.${id}`)}
+                                </DisclosureButton>
+                            </li>
+                        ))}
+                    </ul>
+                    <div className="mt-4 flex items-center justify-between border-t border-line pt-4">
+                        <div className="flex items-center gap-2">
+                            <LanguageToggle />
+                            <ThemeToggle />
+                        </div>
+                        <CvLink />
+                    </div>
+                </nav>
             </DisclosurePanel>
         </Disclosure>
     )

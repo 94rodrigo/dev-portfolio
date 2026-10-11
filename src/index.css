@@ -1,1 +1,138 @@
 @import "tailwindcss";
+
+/* Design tokens — "engineering notebook": paper, ink and a single accent. */
+:root {
+  --paper: #f5f3ee;
+  --surface: #fbfaf7;
+  --ink: #1c1b19;
+  --ink-muted: #5c5a55;
+  --line: #dad6cc;
+  --grid: rgb(28 27 25 / 0.05);
+  --accent: #0f5f5c;
+  --accent-strong: #0a4846;
+  --accent-ink: #ffffff;
+  color-scheme: light;
+}
+
+/* Dark: follows the system unless the visitor picked a theme (data-theme set in index.html) */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #141513;
+    --surface: #1b1c1a;
+    --ink: #eceae4;
+    --ink-muted: #a3a09a;
+    --line: #2e2f2c;
+    --grid: rgb(236 234 228 / 0.04);
+    --accent: #5fb3ad;
+    --accent-strong: #84c8c3;
+    --accent-ink: #0e1413;
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme="dark"] {
+  --paper: #141513;
+  --surface: #1b1c1a;
+  --ink: #eceae4;
+  --ink-muted: #a3a09a;
+  --line: #2e2f2c;
+  --grid: rgb(236 234 228 / 0.04);
+  --accent: #5fb3ad;
+  --accent-strong: #84c8c3;
+  --accent-ink: #0e1413;
+  color-scheme: dark;
+}
+
+@theme inline {
+  --font-display: "Fraunces Variable", Georgia, serif;
+  --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+
+  --color-paper: var(--paper);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-accent-strong: var(--accent-strong);
+  --color-accent-ink: var(--accent-ink);
+}
+
+@layer base {
+  html {
+    background: var(--paper);
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    @apply bg-paper font-sans text-ink;
+  }
+
+  ::selection {
+    background: var(--accent);
+    color: var(--accent-ink);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+}
+
+@utility grid-paper {
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+@utility link-underline {
+  text-decoration-line: underline;
+  text-decoration-color: var(--line);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+  transition: text-decoration-color 150ms;
+
+  &:hover {
+    text-decoration-color: currentColor;
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Scroll reveal (see useReveal); content stays visible when motion is reduced */
+@media (prefers-reduced-motion: no-preference) {
+  .reveal {
+    transition:
+      opacity 700ms cubic-bezier(0.2, 0.7, 0.2, 1),
+      transform 700ms cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+
+  .reveal:not([data-visible]) {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+}
+
+@utility animate-rise {
+  @media (prefers-reduced-motion: no-preference) {
+    animation: rise 600ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  }
+}

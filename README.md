@@ -73,7 +73,7 @@ npm run deploy
 ```
 
 This command:
-1. Builds the project (`npm run build`)
+1. Builds the project (`npm run build`) and copies `index.html` to `404.html`, so deep links like `/dev-portfolio/projects` work on GitHub Pages
 2. Deploys the `dist/` folder to the `gh-pages` branch
 
 Configure the `homepage` field in `package.json` to match your GitHub Pages URL.
@@ -83,39 +83,34 @@ Configure the `homepage` field in `package.json` to match your GitHub Pages URL.
 ```
 .
 ├── src/
-│   ├── components/          # Reusable components (Navbar, Footer, etc.)
-│   ├── pages/               # Page components (Home, About, Projects, Skills, Contact)
+│   ├── components/          # Navbar, Footer and the page sections (Hero, About, Projects, Skills, Contact)
+│   ├── hooks/               # useActiveSection, useCvLink, useReveal (scroll fade-in), useTheme
+│   ├── pages/               # Home (composes the sections) and NotFound
+│   ├── constants.ts         # Section ids and contact links
+│   ├── index.css            # Design tokens (colors, fonts) and base styles
 │   ├── locales/             # i18n translation files
 │   │   ├── en/
 │   │   │   └── common.json
 │   │   └── pt/
 │   │       └── common.json
-│   ├── App.tsx              # Route configuration
+│   ├── App.tsx              # Layout (skip link, navbar, main, footer)
 │   ├── i18n.ts              # i18next setup
 │   └── main.tsx             # React entry point
 ├── public/
 │   ├── documents/           # CV PDF files
-│   └── icons/               # Images & static assets
+│   └── favicon.svg
 ├── vite.config.ts           # Vite configuration
 ├── tsconfig.json            # TypeScript settings
 ├── eslint.config.js         # Linting rules
-├── tailwind.config.js       # Tailwind CSS customization
 └── package.json             # Dependencies & scripts
 ```
 
-## 🧭 Routes
+## 🧭 Navigation
 
-The application has these main routes (defined in `src/App.tsx`):
+The portfolio is a single page with anchored sections, in this order: `#projects`, `#skills`, `#about` and `#contact`.
+The old multi-page URLs (`/about`, `/projects`, `/skills`, `/contact`) still work and scroll to the matching section; any other path shows a 404 page.
 
-| Route | Page | Purpose |
-|-------|------|---------|
-| `/` | Home | Landing page with intro |
-| `/about` | About | Background and experience |
-| `/projects` | Projects | Showcase of work |
-| `/skills` | Skills | Technical expertise |
-| `/contact` | Contact | Contact form / info |
-
-Unknown routes redirect to the home page.
+Visitors can switch between light and dark themes in the navbar; the choice is saved in `localStorage` and defaults to the system preference.
 
 ## 🌍 Internationalization
 
@@ -132,7 +127,7 @@ import { useTranslation } from 'react-i18next';
 
 export function MyComponent() {
   const { t } = useTranslation();
-  return <h1>{t('nav.home')}</h1>;
+  return <h1>{t('nav.about')}</h1>;
 }
 ```
 
@@ -145,7 +140,7 @@ The language detector automatically detects the browser language or defaults to 
 
 ## 📄 CV Downloads
 
-The navbar **Download CV** button serves language-specific PDF files:
+The **Download CV** buttons (navbar and hero) serve language-specific PDF files:
 
 | Language | File |
 |----------|------|
@@ -156,18 +151,15 @@ Both files are served from `/public/documents/`.
 
 ## 💡 Customization Guide
 
-### Add a New Page
-1. Create a new component in `src/pages/` (e.g., `Blog.tsx`)
-2. Add the route to `src/App.tsx`:
-   ```tsx
-   <Route path="/blog" element={<Blog />} />
-   ```
-3. Add navigation link in `src/components/Navbar/Navbar.tsx`
-4. Add translations to both locale files
+### Add a New Section
+1. Add its id to `SECTIONS` in `src/constants.ts` (the navbar link comes from this list)
+2. Create the component in `src/components/<Name>/<Name>.tsx`, wrapping the content in `<Section>`
+3. Render it in `src/pages/Home.tsx`
+4. Add `nav.<id>` and the section texts to both locale files
 
 ### Modify Styling
-- Global styles use Tailwind CSS
-- Configure colors and theme in `tailwind.config.js`
+- Global styles use Tailwind CSS v4
+- Colors (light and dark) and fonts are tokens in `src/index.css` (`:root` + `@theme`); use them as `bg-paper`, `text-ink`, `text-accent`, `font-display`, etc.
 - Update Tailwind classes directly in components
 
 ### Add Components

@@ -1,65 +1,103 @@
 {
+  "skipToContent": "Skip to content",
   "nav": {
-    "home": "Home",
     "about": "About",
     "projects": "Projects",
     "skills": "Skills",
-    "contact": "Contact"
+    "contact": "Contact",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "primary": "Main navigation",
+    "themeDark": "Switch to dark theme",
+    "themeLight": "Switch to light theme"
   },
   "navbar": {
     "downloadCV": "Download CV",
     "language": "Language",
-    "english": "English",
-    "portuguese": "Portuguese",
-    "cvLanguage": "PDF in english"
+    "cvLanguage": "PDF in English"
   },
-  "mainSection": {
-    "greeting": "Hi, I'm Rodrigo Costa!",
-    "title": "Software Developer",
-    "subtitle": "A passionate software developer with a love for creating innovative solutions. Welcome to my portfolio!"
-  },
-  "cardSection": {
-    "heading": "Projects",
-    "description": "Here are some of my projects. Click on the cards to see more details.",
-    "aboutMe": "About Me",
-    "aboutMeDesc": "Get to know more about me and my journey as a software developer.",
-    "myProjects": "My projects",
-    "myProjectsDesc": "Check out some of the projects I have worked on.",
-    "skills": "Skills",
-    "skillsDesc": "See the tools and technologies I specialize in.",
-    "viewDetails": "View Details"
+  "hero": {
+    "eyebrow": "Software developer · Santos, Brazil",
+    "lead": "Software developer with 6+ years of experience building backend systems and web applications with Java, Spring and React. Below are a few projects that show how I think about and build software.",
+    "ctaProjects": "See projects",
+    "figure": "fig. 01 — self-portrait, illustrated edition",
+    "avatarAlt": "Illustration of Rodrigo Costa coding on a laptop"
   },
   "about": {
-    "title": "About Me",
-    "intro": "Hi! I'm Rodrigo, a software developer with over 6 years of experience building web applications and backend systems.",
-    "tech": "My main stack includes Java, React, and TypeScript, and I also have experience working with Go and Python. I enjoy designing clean architectures, developing scalable APIs, and building reliable applications that solve real-world problems.",
-    "education": "I hold degrees in Chemical Engineering and Systems Analysis and Development, which gave me a strong analytical mindset and a structured approach to problem solving. I currently live in Santos, São Paulo, Brazil.",
-    "languages": "I speak Portuguese, English, and French, and I also have working knowledge of Spanish and German.",
-    "interests": "Outside of programming, I enjoy practicing physical exercises, listening to music, playing the guitar, and reading books. I believe maintaining a balance between technology and personal interests helps me stay creative and motivated.",
-    "career": "I'm always interested in learning new technologies, improving my skills, and collaborating on meaningful projects."
-  },
-  "skills": {
-    "title": "Skills",
-    "intro": "Here are some of the technologies and tools I work with when building web applications and backend services, and I'm always interested in learning new ones.",
-    "languages": "💻 Programming Languages",
-    "frontend": "⚛️ Frontend",
-    "backend": "🧠 Backend",
-    "databases": "🗄️ Databases",
-    "tools": "⚙️ Tools & Technologies",
-    "learning": "🌱 Currently Learning"
+    "title": "About me",
+    "intro": "I'm a software developer with over 6 years of experience building web applications and backend systems.",
+    "tech": "My main stack includes Java, React and TypeScript, and I also work with Go and Python. I enjoy designing clean architectures, building scalable APIs and shipping reliable applications that solve real problems.",
+    "education": "I hold degrees in Chemical Engineering and Systems Analysis and Development, which gave me an analytical mindset and a structured approach to problem solving.",
+    "interests": "Away from the keyboard I work out, play guitar, listen to music and read. Keeping that balance helps me stay creative and motivated.",
+    "facts": {
+      "location": "Based in",
+      "locationValue": "Santos, SP — Brazil",
+      "experience": "Experience",
+      "experienceValue": "6+ years",
+      "education": "Education",
+      "educationValue": "Chemical Eng. · Systems Analysis and Development",
+      "languages": "Languages",
+      "languagesValue": "Portuguese, English, French · working Spanish and German"
+    }
   },
   "projects": {
-    "title": "Projects"
+    "title": "Selected projects",
+    "others": "Other projects",
+    "repo": "Code on GitHub",
+    "noImage": "No screenshot",
+    "items": {
+      "weather": {
+        "title": "Weather AI Dashboard",
+        "description": "Full-stack app that shows real-time weather for multiple cities and generates AI-powered insights. Spring backend, React frontend and a multilingual interface."
+      },
+      "portfolio": {
+        "title": "Stock portfolio simulator",
+        "description": "Create, manage and analyze investment portfolios in a simple way. Go backend and a React + Vite frontend."
+      },
+      "currency": {
+        "title": "Multilingual currency converter",
+        "description": "Currency converter with a multilingual interface, built with React."
+      },
+      "statusChecker": {
+        "title": "HTTP status checker",
+        "description": "Takes a URL and returns the response status: green for codes below 400, red for 400 and above."
+      },
+      "megaSena": {
+        "title": "Mega-Sena results checker",
+        "description": "Script that compares the drawn numbers against games stored in a .txt file and lists the lines with 4 or more hits."
+      }
+    }
+  },
+  "skills": {
+    "title": "Tools of the trade",
+    "intro": "Technologies I use to build web applications and backend services.",
+    "languages": "Languages",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "databases": "Databases",
+    "tools": "Tools",
+    "learning": "Currently learning",
+    "items": {
+      "rest": "REST APIs",
+      "microservices": "Microservices",
+      "apiDesign": "API design",
+      "python": "Python (going deeper)",
+      "ml": "Machine learning"
+    }
   },
   "contact": {
-    "title": "Contact",
-    "intro": "If you'd like to discuss a project, job opportunity, or just connect, feel free to reach out. I'll be happy to talk!",
-    "email": "Email",
-    "linkedin": "LinkedIn",
-    "github": "GitHub"
+    "title": "Let's talk?",
+    "intro": "If you'd like to discuss a project, a job opportunity or just exchange ideas, drop me a line.",
+    "copy": "Copy email",
+    "copied": "Copied!"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "text": "The address you tried doesn't exist or has been moved.",
+    "back": "Back to home"
   },
   "footer": {
-    "credit": "Developped by Rodrigo Costa"
-  },
-  "backButton": "← Home"
+    "builtWith": "Built with React, TypeScript and Tailwind CSS.",
+    "backToTop": "Back to top"
+  }
 }

@@ -1,10 +1,22 @@
+import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
+import { CONTACT } from '../../constants';
 
 export default function Footer() {
+    const { t } = useTranslation();
+
     return (
-        <footer className="bg-gray-800">
-            <span className="text-amber-50">© 2026 Rodrigo Costa</span>
-            <br />
-            <span className="text-amber-50"><a href="https://github.com/94rodrigo" target="_blank" rel="noopener noreferrer" className="hover:text-amber-300">GitHub</a> | <a href="https://www.linkedin.com/in/rodrigo-de-abreu-costa-a97572b5/" target="_blank" rel="noopener noreferrer" className="hover:text-amber-300">LinkedIn</a> | <a href="mailto:rodrigoc94@hotmail.com" className="hover:text-amber-300">Email</a></span>
+        <footer className="border-t border-line">
+            <div className="mx-auto flex max-w-6xl flex-col gap-4 px-4 py-8 text-sm text-ink-muted sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
+                <p>
+                    © {new Date().getFullYear()} Rodrigo Costa. {t('footer.builtWith')}
+                </p>
+                <ul className="flex gap-5">
+                    <li><a href={CONTACT.github} target="_blank" rel="noopener noreferrer" className="hover:text-ink">GitHub</a></li>
+                    <li><a href={CONTACT.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-ink">LinkedIn</a></li>
+                    <li><Link to="/#top" className="hover:text-ink">{t('footer.backToTop')} ↑</Link></li>
+                </ul>
+            </div>
         </footer>
     );
 }
