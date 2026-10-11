@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/dev-portfolio/favicon.svg" />
+    <title>Rodrigo Costa — Software Developer</title>
+    <meta
+      name="description"
+      content="Rodrigo Costa, software developer based in Santos, Brazil. Backend systems and web applications with Java, Spring, React and TypeScript."
+    />
+    <meta name="theme-color" content="#f5f3ee" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#141513" media="(prefers-color-scheme: dark)" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Rodrigo Costa — Software Developer" />
+    <meta
+      property="og:description"
+      content="Backend systems and web applications with Java, Spring, React and TypeScript."
+    />
+    <meta property="og:url" content="https://94rodrigo.github.io/dev-portfolio/" />
+    <script>
+      // Apply the saved or system theme before first paint to avoid a flash
+      (function () {
+        var theme;
+        try { theme = localStorage.getItem('theme'); } catch (e) {}
+        if (theme !== 'light' && theme !== 'dark') {
+          theme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        document.documentElement.dataset.theme = theme;
+      })();
+    </script>
+    <script type="module" crossorigin src="/dev-portfolio/assets/index-krm4_-ZG.js"></script>
+    <link rel="stylesheet" crossorigin href="/dev-portfolio/assets/index-DadKsID4.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
