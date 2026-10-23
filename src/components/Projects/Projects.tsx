@@ -3,6 +3,7 @@ import { ArrowUpRightIcon } from '@heroicons/react/20/solid';
 import Section from '../Section/Section';
 import ProjectCard, { type Project } from '../ProjectCard/ProjectCard';
 import { CONTACT } from '../../constants';
+import glucoWidgetImage from '../../assets/images/projects/glucowidget.webp';
 
 const FEATURED: Project[] = [
     {
@@ -12,19 +13,21 @@ const FEATURED: Project[] = [
         stack: ["Python", "FastAPI", "PostgreSQL + pgvector", "Celery", "Redis", "React", "TypeScript", "Stripe"],
     },
     {
+        key: "glucowidget",
+        repo: "glucose-monitor-pc-widget",
+        imageSrc: glucoWidgetImage,
+        stack: ["Python", "PySide6 (Qt)", "httpx", "keyring", "pytest", "PyInstaller", "GitHub Actions"],
+    },
+    {
         key: "weather",
         repo: "weather-ai-dashboard",
         imageSrc: "https://github.com/user-attachments/assets/5d7261b4-1997-454b-8698-45a89e085e7c",
         stack: ["Java", "Spring", "React", "TypeScript"],
     },
-    {
-        key: "portfolio",
-        repo: "simulador-carteira-acoes",
-        stack: ["Go", "React", "Vite", "TypeScript"],
-    },
 ];
 
 const OTHERS: Project[] = [
+    { key: "portfolio", repo: "simulador-carteira-acoes", stack: ["Go", "React", "Vite", "TypeScript"] },
     { key: "currency", repo: "multilingual-currency-exchange", stack: ["React", "JavaScript"] },
     { key: "statusChecker", repo: "golang-status-checker-website", stack: ["Go", "HTML", "Sass"] },
     { key: "megaSena", repo: "conferidor_resultados_mega_sena", stack: ["Python"] },

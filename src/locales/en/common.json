@@ -50,6 +50,10 @@
         "title": "Citenest — document chat (RAG)",
         "description": "SaaS that answers questions about your documents with citations to the source page, streamed token by token. Hybrid search (vector + BM25 fused with Reciprocal Rank Fusion), cross-encoder re-ranking, asynchronous ingestion on Celery workers and Stripe subscriptions. React frontend in six languages, 74 tests and CI."
       },
+      "glucowidget": {
+        "title": "GlucoWidget — desktop glucose monitor",
+        "description": "Windows and Linux widget that shows FreeStyle Libre glucose readings in real time through a custom client for the unofficial LibreLinkUp API. Optional AI analysis with 9 providers (including local Ollama), credentials kept in the system keyring and 45 tests. CI tests, packages and publishes executables for both systems on every push."
+      },
       "weather": {
         "title": "Weather AI Dashboard",
         "description": "Full-stack app that shows real-time weather for multiple cities and generates AI-powered insights. Spring backend, React frontend and a multilingual interface."
